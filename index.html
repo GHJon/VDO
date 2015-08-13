@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Us</title>
-  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<title>Violence </title>
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <meta name="community, violence, gangs">
-  <style>
-    body {
-      background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);
-    }
-    .whoarewe {
-      font-size: 12pt;
-    }
-    @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
+	<meta name="community, violence, gangs">
+	<style>
+		body {
+			background: url(http://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg);
+		}
+		.whoarewe {
+			font-size: 12pt;
+		}
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
 }
 
 h1 {
@@ -68,7 +68,6 @@ a.control_prev, a.control_next {
   opacity: 0.8;
   cursor: pointer;
 }
-
 a.control_prev:hover, a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
@@ -101,14 +100,17 @@ h3 {
 }
 
 
+.slide, .nav {
+	padding: -100px;
+}
 
 
 
-  </style>
+	</style>
 </head>
 <body>
-<center><img src="images/logo.gif"></center>
-<nav class="navbar navbar-default">
+<center><img src="images/logo.gif" style="background-size="100%""></center>
+<nav class="navbar navbar-default" class="nav">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -132,7 +134,6 @@ h3 {
             <li><a href="contactus1.html">Contact Us</a></li>
             <li><a href="officehours.html">Office Hours</a></li>
             <li><a href="socialmedia.html">Social Media</a></li>
-            <li role="separator" class="divider"></li>
           </ul>
         </li>
       </ul>
@@ -155,17 +156,81 @@ h3 {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<h1> Social Media </h1>
+
+
+<div id="slider" class="slide">
+  <a href="#" class="control_next">>></a>
+  <a href="#" class="control_prev"><</a>
+  <ul>
+    <li><img src="http://www.thenation.com/wp-content/uploads/2015/03/hatecrime_vigil_ap_img.jpg" width="1342px" height="500px"></li>
+    <li><img src="https://richardoduor.files.wordpress.com/2014/11/stoptheviolence.jpg" width="1342px" height="500px"></li>
+    <li><img src="http://news.xinhuanet.com/english/photo/2014-12/14/133853267_14185123382371n.jpg" width="1342px" height="500px"></li>
+    <li><img src="http://files.renegadebs.com/miscjunk/Tibet-Protest.jpg" width="1342px" height="500px"></li>
+  </ul>  
+</div>
+<div class="slider_option">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox">Autoplay Slider</label>
+</div> 
+<script>
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});   
+
+
+</script>
+
+
+<h1>Who Are We?</h1>
+<p class="whoarewe"> Founded in 1994, The Violence Defense Organization is a New York only organization that aims to help those who are victims of any type of violence, whether it be physical, verbal, or on the internet. We provide information for all aspects of violence and how to respond to those abusive actions. Through our website, we will give information for those that don't know precisely what Violence is, how to respond to it, our office hours, contact page, hotlines for victims and more in order to make Violence drastically decrease in our community. With our committed staff, we will keep this website up and running for anybody who wishes to understand the issue of Violence. Due to our existance, we have lowered gun violence drastically over the past 20 years, ans we intend to keep it that way as well as lower violence in all other aspects of it. We must protect those that are taken advantage of through every single outlet.</p>
 <br>
-  <P><img src="images\twitter.png" width="50px" height="50px"> @VDOrganization</p>
-  <p><img src="images\facebook.png" width="50px" height="50px"> /VDOrganization</p>
-  <p><img src="images\instagram.png" width="50px" height="50px"> /VDOrg</p>
-  <p><img src="images\snapchat.png" width="50px" height="50px"> @WeAreVDO</p>
-  <p><img src="images\googleplus.png" width="50px" height="50px"> /VDOrganization</p>
-  <br>
+<img src="http://archives.jrn.columbia.edu/2012-2013/theuptowner.org/wp-content/uploads/2009/10/LLW_gunviolence2.jpg">
 
 
-  <footer>
+<footer>
         <div class="container-fluid" style="background-color:gray;" line-height="20px">
             <div class="container-fluid">
         <div class="row">
@@ -178,13 +243,14 @@ h3 {
                 <a href="https://www.twitter.com"><img src="images\twitter.png" alt="twitter" style="width:43px;height:30px;"></a>
                 <a href="https://instagram.com"><img src="images\instagram.png" alt="instagram" style="width:43px;height:30px;">
                 <a href="https://www.youtube.com"><img src="images\googleplus.png" alt="google+"style="width:43px;height:30px;"></a>
-                  <a href="https://www.snapchat.com"><img src="images\snapchat.png" alt="snapchat"style="width:43px;height:30px;"></a>
+                 <a href="https://www.snapchat.com"><img src="images\snapchat.png" alt="snapchat"style="width:43px;height:30px;"></a>
                     
 
 
             </div>
         </div>        
 </footer>
+
 
 
 
